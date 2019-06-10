@@ -6,6 +6,8 @@ public class Exercicio03 {
 	
 	public static void main(String[] args) {
 		
+		// Mostrar produtos com quantidade igual a zero
+		
 		ProdutoRepository repository = new ProdutoRepository();
 		
 		 repository.findAll().removeIf(p -> p.getQuantidade() != 0);

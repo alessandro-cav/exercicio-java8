@@ -6,6 +6,8 @@ public class Exercicio04 {
 	
 	public static void main(String[] args) {
 		
+		// Mostrar todos os produtos disponiveis 
+		
 		ProdutoRepository repository = new ProdutoRepository();
 		
 		repository.findAll().removeIf(p -> p.isStatus() == false);

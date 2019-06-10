@@ -9,6 +9,8 @@ public class Exercicio02 {
 	
 	public static void main(String[] args) {
 		
+		// Mostrar mensagem antes de imprimir os produtos
+		
 		ProdutoRepository repository = new ProdutoRepository();
 		
 		Consumer<Produto> mensagemAntes = p -> System.out.println("Imprimindo os Produtos da loja.");
