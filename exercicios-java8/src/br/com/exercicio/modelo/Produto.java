@@ -1,6 +1,6 @@
 package br.com.exercicio.modelo;
 
-public class Produto {
+public class Produto implements Comparable<Produto> {
 
 	private int codigo;
 
@@ -21,11 +21,6 @@ public class Produto {
 		this.status = status;
 	}
 
-	@Override
-	public String toString() {
-		return "Produto [codigo=" + codigo + ", nome=" + nome + ", preco=" + preco + ", quantidade=" + quantidade
-				+ ", status=" + status + "]";
-	}
 
 	public int getCodigo() {
 		return codigo;
@@ -65,6 +60,28 @@ public class Produto {
 
 	public void setStatus(boolean status) {
 		this.status = status;
+	}
+
+	@Override
+	public String toString() {
+		return "Produto [codigo=" + codigo + ", nome=" + nome + ", preco=" + preco + ", quantidade=" + quantidade
+				+ ", status=" + status + "]";
+	}
+
+
+	@Override
+	public int compareTo(Produto o) {
+		
+		/*
+		 * Será negativo, caso o tamanho o.getNome for menor do que this.nome
+		 * Será positivo, caso o this.nome for maior que o.getNome
+		 * Será zero, caso ambas serem identicas
+		 * */
+		
+		 int x = this.nome.compareToIgnoreCase(o.getNome());
+		 
+		 System.out.println(x);
+		return x;
 	}
 
 }
